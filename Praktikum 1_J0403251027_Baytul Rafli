@@ -1,0 +1,26 @@
+#-----------------------------------
+# Praktikum 1 : konsep ADT dan file handling
+# Latihan Dasar 1A : Membaca seluruh file 
+#-----------------------------------
+
+#membuka file dengan mode read ("r")
+
+#membuka file dalam satu str
+with open("mahasiswa.txt", "r", encoding="utf-8") as file:
+    isi_file = file.read()#membaca keseluruhan isi dalam satu string
+print(isi_file)
+
+print("===Hasil Read===")
+print("Tipe data:", type(isi_file))
+print("jumlah karakter", len(isi_file))
+print("jumlah baris", isi_file.count("\n")+1)
+
+#membuka file per baris
+print("===membaca per file===")
+jumlah_baris= 0
+with open("mahasiswa.txt", "r", encoding="utf-8") as file:
+    for baris in file:
+        jumlah_baris = jumlah_baris + 1
+        baris = baris
+        print("baris ke-", jumlah_baris)
+        print("isinya:", baris)
